@@ -76,10 +76,9 @@ class GitRepo:
             os.system("git clone " + self.httpsUrl + " " + fullDstPath);
         else:
             print("Warning: " + fullDstPath + " exist already, will not download from github again")
-            return;
 
         os.chdir(fullDstPath);
-        os.system("git pull");
+        os.system("git fetch origin");
         os.system("git checkout " + self.revision);
 
 PACKAGES = [
